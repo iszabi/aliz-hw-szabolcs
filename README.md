@@ -16,7 +16,7 @@ Test for Aliz / Nexus on GKS with using Docker image / GKS Cluster with Terrafor
 - Then create a service account:
 
 $ gcloud iam service-accounts create iszabi-gkesa
-(There is available a service account with permission limitation (467918867612-compute@developer.gserviceaccount.com) so I couldn't export for it's own credential details.
+(There is available a service account with permission limitation (467918867612-compute@developer.gserviceaccount.com) so I couldn't export my project account credential what other organization provided with limited permission.
 
 - Now we can grant the necessary roles for our service account to create a GKE cluster and the associated resources:
 
