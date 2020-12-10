@@ -1,9 +1,12 @@
 # aliz-hw-szabolcs
-Test for Aliz / Nexus on GKS with using Docker image / GKS Cluster with Terraform
+Test for Aliz 
+- Nexus on GKS with building custom Docker image
+- Deploying Kubernetes Cluster with Terraform on Google Cloud Platform
 
 2. Kubernetes configs for Nexus Deployment
 (Service, Persistence volume, Deployment files.)
-
+    Nexus Temporary URL: http://34.95.72.211/#browse/welcome
+    
 3. Kubernetes on Google Cloud Platform (GKE) with Terraform
 
 - Terraform needs to be authorized to communicate with the Google Cloud API to create and manage resources in our GCP project. We achieve this by enabling the corresponding APIs and creating a service account with appropriate roles:
