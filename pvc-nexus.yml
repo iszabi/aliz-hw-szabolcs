@@ -1,0 +1,12 @@
+# nexus-test.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nexus-test
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+
