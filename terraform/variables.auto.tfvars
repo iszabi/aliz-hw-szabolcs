@@ -1,0 +1,11 @@
+credentials        = "./terraform-gke-keyfile.json"
+project_id         = "aliz-hw-szabolcs"
+region             = "europe-west4"
+zones              = ["europe-west4-a", "europe-west4-b", "europe-west4-c"]
+name               = "gke-cluster"
+machine_type       = "n1-standard-1"
+min_count          = 1
+max_count          = 1
+disk_size_gb       = 10
+service_account    = "467918867612-compute@developer.gserviceaccount.com"
+initial_node_count = 3

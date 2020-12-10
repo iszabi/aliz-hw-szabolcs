@@ -1,0 +1,1 @@
+gsutil versioning set on gs://aliz-hw-szabolcs-bucket-1/

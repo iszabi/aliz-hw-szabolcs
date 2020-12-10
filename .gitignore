@@ -1,0 +1,6 @@
+# Untrack files
+terraform-gke-keyfile.json
+
+# Untrack folders
+terraform/modules
+terraform/plugins
