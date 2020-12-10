@@ -1,12 +1,41 @@
-# nexus-test.yaml
+# pvc-nexus
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 metadata:
-  name: nexus-test
+  name: pvc-cd3fd5e9-695a-11ea-a3da-42010a800093
+  uid: ced478c1-695a-11ea-a3da-42010a800093
+  annotations:
+    kubernetes.io/createdby: gce-pd-dynamic-provisioner
+    pv.kubernetes.io/bound-by-controller: "yes"
+    pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
 spec:
   accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
-
+  - ReadWriteOnce
+  capacity:
+    storage: 20Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: pvc-nexus
+    uid: cd3fd5e9-695a-11ea-a3da-42010a800093
+  gcePersistentDisk:
+    fsType: ext4
+    pdName: gke-cluster-1-pvc-cd3fd5e9-695a-11ea-a3da-42010a800093
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: topology.kubernetes.io/zone
+          operator: In
+          values:
+          - eu-central1-c
+        - key: topology.kubernetes.io/region
+          operator: In
+          values:
+          - eu-central1
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard
+  volumeMode: Filesystem
+status:
+  phase: Bound
+  
