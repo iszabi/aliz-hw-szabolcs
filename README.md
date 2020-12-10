@@ -55,7 +55,7 @@ $ gcloud iam service-accounts create iszabi-gkesa
 ```bash
     $ terraform plan
     $ terraform apply
-
+```
 - When prompted for confirmation, type in “yes” and wait a few minutes for Terraform to build the cluster.
 - When Terraform is done, we can check the status of the cluster and configure the kubectl command line tool to connect to it with:
 
