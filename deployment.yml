@@ -1,34 +1,54 @@
-apiVersion: extensions/v1beta1
-    kind: Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nexus-server
+  name: nexus
+  namespace: devops-tools
+spec:
+  progressDeadlineSeconds: 2147483647
+  replicas: 1
+  revisionHistoryLimit: 2147483647
+  selector:
+    matchLabels:
+      app: nexus-server
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
     metadata:
-      name: nexus
-      namespace: nexus
+      creationTimestamp: null
+      labels:
+        app: nexus-server
     spec:
-      replicas: 1
-      selector:
-        matchLabels:
-            app: nexus-server
-      template:
-        metadata:
-          labels:
-            app: nexus-server
-        spec:
-          containers:
-            - name: nexus
-              image: us.gcr.io/aliz-hw-szabolcs/nexus-aliz:version1
-              resources:
-                limits:
-                  memory: "4Gi"
-                  cpu: "1000m"
-                requests:
-                  memory: "2Gi"
-                  cpu: "500m"
-              ports:
-                - containerPort: 8081
-              volumeMounts:
-                - name: nexus-data
-                  mountPath: /nexus-data
-          volumes:
-            - name: nexus-data
-              emptyDir: {}
-
+      containers:
+      - image: us.gcr.io/aliz-hw-szabolcs/nexus-aliz:version1
+        imagePullPolicy: IfNotPresent
+        name: nexus
+        ports:
+        - containerPort: 8081
+          protocol: TCP
+        resources:
+          limits:
+            cpu: "1"
+            memory: 4Gi
+          requests:
+            cpu: 500m
+            memory: 2Gi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /nexus-data
+          name: nexus-data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: nexus-data
+status: {}
