@@ -1,5 +1,5 @@
 # aliz-hw-szabolcs
-Test for Aliz / GKS Nexus
+Test for Aliz / Nexus on GKS
 
-2. Kubernetes configs
-Service, Persistence volume, Deployment files.
+2. Kubernetes configs for Nexus Deployment
+(Service, Persistence volume, Deployment files.)
