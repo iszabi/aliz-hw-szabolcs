@@ -1,5 +1,5 @@
 # aliz-hw-szabolcs
-Test for Aliz / Nexus on GKS
+Test for Aliz / Nexus on GKS with using Docker image / GKS Cluster with Terraform
 
 2. Kubernetes configs for Nexus Deployment
 (Service, Persistence volume, Deployment files.)
