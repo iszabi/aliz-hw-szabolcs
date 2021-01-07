@@ -1,6 +1,6 @@
 # aliz-hw-szabolcs
 Test for Aliz 
-- Nexus on GKS with building custom Docker image
+- Nexus on GKE with building custom Docker image
 - Deploying Kubernetes Cluster with Terraform on Google Cloud Platform
 
 2. Kubernetes configs for Nexus Deployment
