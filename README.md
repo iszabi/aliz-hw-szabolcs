@@ -1,4 +1,4 @@
-# aliz-gke-szabolcs
+# gke-terraform-nexus with used custom pvs
 Test for Aliz 
 - Nexus on GKE with building custom Docker image
 - Deploying Kubernetes Cluster with Terraform on Google Cloud Platform
