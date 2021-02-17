@@ -1,4 +1,4 @@
-# aliz-hw-szabolcs
+# aliz-gke-szabolcs
 Test for Aliz 
 - Nexus on GKE with building custom Docker image
 - Deploying Kubernetes Cluster with Terraform on Google Cloud Platform
